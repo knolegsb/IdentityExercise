@@ -1,0 +1,17 @@
+﻿@model List<IdnetityExercise.Models.TestViewModel>
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+@for (int i = 1; i <= Model.Count; i++)
+{
+    var title = Model[i - 1];
+    <div>
+        <h2>Model @i</h2>
+        @Html.LabelFor(x => title.Title)
+        @Html.EnumDropDownListFor(x => title.Title)
+        @Html.EditorFor(x => title.Title)
+    </div>
+}
